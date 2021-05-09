@@ -3,12 +3,12 @@
 #include <ESP8266WiFi.h>                                     // Importing esp8266 library.
 
 
-const char* ssid = "corona";                                 //Write your WiFi name here.
-const char* pass = "covid2019";                              //Write your WiFi password here.
+const char* ssid = "Your WiFi User Name";                      //Write your WiFi name here.
+const char* pass = "Your WiFi Password";                       //Write your WiFi password here.
 
 char* server = "api.thingspeak.com";                          //ThingSpeak server address.
-unsigned long channelID = 1377706;                            //Your ThingSpeak channel Id.
-const char* readAPIKey = "7NMGIMDVX6PZNC5D";                   //Your Thingspeak channel read key.
+unsigned long channelID =  Your ThingSpeak channel id;        //Your ThingSpeak channel Id.
+const char* readAPIKey = "Your channel read API key";         //Your Thingspeak channel read key.
 
 const int field1 = 1;                                          //Declaring field1 equal to ThingSpeak channel field1 and as a constant integer value.
 const int field2 = 2;                                          //Declaring field2 equal to ThingSpeak channel field2 and as a constant integer value.
@@ -158,9 +158,9 @@ else if(fieldone == 2 && fieldfour == 0){
 
 // Lights control
 
-if(fieldtwo == 1 && fieldfour > 0)                                                                     // fieldtwo denotes values for led's i.e. for different values of fieldfour different colour of led will glow up 
-{                                                                                                      // fieldfour will denote the delay time i.e. for how much time a led or motor should run.
-    digitalWrite(blue, HIGH);                                                                           // If a user want to run a led or motor continously then he/she will give delay time = 0.
+if(fieldtwo == 1 && fieldfour > 0)                                 // fieldtwo denotes values for led's i.e. for different values of fieldfour different colour of led will glow up 
+{                                                                  // fieldfour will denote the delay time i.e. for how much time a led or motor should run.
+    digitalWrite(blue, HIGH);                                      // If a user want to run a led or motor continously then he/she will give delay time = 0.
     digitalWrite(green, HIGH);
     digitalWrite(red, LOW);
     delay(fieldfour);
@@ -298,11 +298,11 @@ else if(fieldtwo == 11){
 
 // Servo motor control
 
-if(fieldthree >= 1 && fieldfour > 0 && fieldfive > 0)                                              //fieldthree denotes values for servo motor controlling.
+if(fieldthree >= 1 && fieldfour > 0 && fieldfive > 0)                                  //fieldthree denotes values for servo motor controlling.
 { 
-  for(i=1; i<=fieldfive; i++)                                                                      // fieldfive will denote that for how many times you want to run a process.
-  {                                                                                                // fieldfour will denote the delay time i.e. for how much time a led or motor should run.
-  Serial.print("\n loop has started");                                                              // If a user want to run a led, motor or servo motor continously then he/she will give delay time = 0.
+  for(i=1; i<=fieldfive; i++)                                                          // fieldfive will denote that for how many times you want to run a process.
+  {                                                                                    // fieldfour will denote the delay time i.e. for how much time a led or motor should run.
+  Serial.print("\n loop has started");                                                 // If a user want to run a led, motor or servo motor continously then he/she will give delay time = 0.
   servo_1.write(0);
   delay(fieldfour);
   servo_1.write(fieldthree);
